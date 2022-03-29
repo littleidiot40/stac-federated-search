@@ -1,14 +1,14 @@
 # Template Extension Specification
 
-- **Title:** Template
+- **Title:** Collection Search
 - **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
 - **Field Name Prefix:** template
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @your-gh-handles @person2
 
-This document explains the Template Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-This is the place to add a short introduction.
+This document explains the Collection Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+The core STAC API makes the assumption that a user already knows which collection(s) they are interested in. There is no facility for collection discovery via free text search and/or a controlled vocabulary. This extension provides support fo the collection discovery use case.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
