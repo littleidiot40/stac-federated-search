@@ -1,4 +1,4 @@
-# Template Extension Specification
+# Collection Search Extension Specification
 
 - **Title:** Collection Search
 - **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
