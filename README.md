@@ -7,7 +7,8 @@
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @your-gh-handles @person2
 
-This document explains the Collection Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+This document explains the Collection Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
+(STAC) specification.
 The core STAC API makes the assumption that a user already knows which collection(s) they are interested in. 
 There is no facility for collection discovery via free text search and/or a controlled vocabulary. 
 This extension provides support fo the collection discovery use case.
