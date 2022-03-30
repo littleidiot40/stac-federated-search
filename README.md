@@ -11,7 +11,8 @@ This document explains the Collection Search Extension to the [SpatioTemporal As
 (STAC) specification.
 The core STAC API makes the assumption that a user already knows which collection(s) they are interested in. 
 There is no facility for collection discovery via free text search and/or a controlled vocabulary. 
-This extension provides support fo the collection discovery use case.
+This extension provides support fo the collection discovery use case. 
+[OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters)
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
