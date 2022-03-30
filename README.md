@@ -2,8 +2,8 @@
 
 - **Title:** Collection Search
 - **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** template
-- **Scope:** Item, Collection
+- **Field Name Prefix:** col
+- **Scope:** Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @littleidiot40 @ycespb
 
