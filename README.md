@@ -1,18 +1,16 @@
-# Collection Search Extension Specification
+# Federated Search Extension Specification
 
-- **Title:** Collection Search
+- **Title:** Federated Search
 - **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
 - **Field Name Prefix:** col
 - **Scope:** Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @littleidiot40 @ycespb
 
-This document explains the Collection Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
+This document explains the Federated Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
 (STAC) specification.
-The core STAC API makes the assumption that a user already knows which collection(s) they are interested in. 
-There is no facility for collection discovery via free text search and/or a controlled vocabulary. 
-This extension provides support fo the collection discovery use case. 
-[OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters)
+This extension provides support fo the federated discovery use case. 
+Leverage: [OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters)
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
