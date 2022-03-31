@@ -18,8 +18,6 @@ Leverage: [OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
 
-
-
 ## Landing Page
 
 The following Link relation must exist in the Landing Page (root).
@@ -29,7 +27,8 @@ The following Link relation must exist in the Landing Page (root).
 | `search` | `/collections` | `application/json` | Extension | **REQUIRED** URI for the (STAC) Collection Search endpoint |
 
 This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The 
-collection `search` link can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
+collection `search` link can be distinguished from a regular item `search` link as the `type` for the
+item search should be `application/geo+json` instead.
 
 ## API Collection Search
 
@@ -57,14 +56,14 @@ This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
 | ----------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| limit       | integer          | OAFeat     | **REQUIRED** The maximum number of results to return (page size).                                                                                                                            |
-| bbox        | \[number]        | OAFeat     | **REQUIRED** Requested bounding box.                                                                                                                                                         |
+| limit       | integer          | OAFeat     | **REQUIRED** The maximum number of results to return (page size).                                                                                       |
+| bbox        | \[number]        | OAFeat     | **REQUIRED** Requested bounding box.                                                   |
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
-| intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.                                  |
-| ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                                                                                       |
-| q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.        
+| intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.           |
+| ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                 |
+| q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.   |     
 | type        | \[string]        | OGC API-Records   | Resource type.      |
-| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                                         |
+| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                          |
 
 ## STAC Collections
 
@@ -73,7 +72,8 @@ This extension adds a few additional parameters for convenience.
 See [STAC Collection Specification](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md).
 
 Note that [OGC API-Records §6.7](http://docs.ogc.org/DRAFTS/20-004.html#sc_record-collection-overview) defines a different list of possible
- fields for Collection in §6.7, e.g. `publisher` instead of `providers`.  We will have to propose the actual list of mandatory elmements if mixing STAC and API-Records. 
+ fields for Collection in §6.7, e.g. `publisher` instead of `providers`.  We will have to propose the actual list 
+ of mandatory elmements if mixing STAC and API-Records. 
 
 ### Collection Links
 
@@ -110,7 +110,8 @@ This conformance class also requires the endpoint below to be implemented.
  
 ### Query Parameters and Fields
 
-The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search).  This extension adds a few additional parameters for convenience.
+The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search). 
+This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
 | ----------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -125,11 +126,10 @@ The core parameters for STAC collection search are borrowed from the [STAC Item 
 
 ### Item Properties 
 
-Which item properties from which STAC extensions will CEOS recommend ?  A list of possibilities is shown on (https://github.com/stac-utils/stac-crosswalks/tree/master/OGC_17-003r2).
+Which item properties from which STAC extensions will CEOS recommend ?  A list of possibilities is shown in the [STAC/OGC17-003r2 Crosswalk](https://github.com/stac-utils/stac-crosswalks/tree/master/OGC_17-003r2).
 
 [CEOS Best Practices](https://ceos.org/document_management/Working_Groups/WGISS/Documents/WGISS%20Best%20Practices/CEOS%20OpenSearch%20Best%20Practice.pdf) CEOS-BP-12,
 CEOS-BP-12B, CEOS-BP-12C, CEOS-BP-12D and CEOS-BP-12E can be implemented using Link objects or Asset objects.  The following recommendations apply. 
-
 
 ### Item Links
 
