@@ -24,11 +24,12 @@ Leverage: [OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters
 
 The following Link relation must exist in the Landing Page (root).
 
-| **rel**  | **href**  | **type** | **From**               | **Description**             |
+| **rel**  | **href** | **type** | **From**               | **Description**             |
 | -------- | --------- | ---------- | ------------ | --------------------------- |
-| `search` | `/collections` |  `application/json`  | Extension | **REQUIRED** URI for the (STAC) Collection Search endpoint |
+| `search` | `/collections` | `application/json` | Extension | **REQUIRED** URI for the (STAC) Collection Search endpoint |
 
-This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The collection `search` link can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
+This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The 
+collection `search` link can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
 
 ## API Collection Search
 
@@ -40,14 +41,19 @@ This extension also requires the endpoint below to be implemented as a [`local r
 | --------- | --------------- | --------------- |
 | `/collections` | Collection Collection | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
 
-The response format is `application/json` and is an extension of the the /collections reponse defined bu [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  See [OGC API-Records §6.3](http://docs.ogc.org/DRAFTS/20-004.html#_tldr_local_resources_catalogue) where the endpoint `/collections` is provided as typical example of a `local resources catalogue`.  See also  §9 "Simple Query" of [OGC API - Common - Part 2: Geospatial Data](https://docs.ogc.org/DRAFTS/20-024.html#rc-simple-query-section) for additional information about the expected response content. 
+The response format is `application/json` and is an extension of the the /collections reponse defined bu [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  
+See [OGC API-Records §6.3](http://docs.ogc.org/DRAFTS/20-004.html#_tldr_local_resources_catalogue) where the endpoint `/collections` is 
+provided as typical example of a `local resources catalogue`.  See also  §9 "Simple Query" of 
+[OGC API - Common - Part 2: Geospatial Data](https://docs.ogc.org/DRAFTS/20-024.html#rc-simple-query-section) for 
+additional information about the expected response content. 
  
 ### Query Parameters and Fields
 
 The following list of parameters is used to narrow search queries. They can all be represented as query 
 string parameters in a GET request (**REQUIRED**), or as JSON entity fields in a POST request. 
 
-The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search).  This extension adds a few additional parameters for convenience.
+The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search).
+This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
 | ----------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,12 +61,10 @@ The core parameters for STAC collection search are borrowed from the [STAC Item 
 | bbox        | \[number]        | OAFeat     | **REQUIRED** Requested bounding box.                                                                                                                                                         |
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
 | intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.                                  |
-| ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                                                                                                    |
-| q | \[string]         | OGC API-Records       | **REQUIRED** String value for textual search.        
-| type | \[string]        | OGC API-Records       | Resource type.      
-| externalId | \[string]         | OGC API-Records       | External identifier associated with the collection. (same as `ids` ?)                                                                                                |
-
-
+| ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                                                                                       |
+| q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.        
+| type        | \[string]        | OGC API-Records   | Resource type.      |
+| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                                         |
 
 ## STAC Collections
 
@@ -68,8 +72,8 @@ The core parameters for STAC collection search are borrowed from the [STAC Item 
 
 See [STAC Collection Specification](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md).
 
-Note that [OGC API-Records §6.7](http://docs.ogc.org/DRAFTS/20-004.html#sc_record-collection-overview) defines a different list of possible fields for Collection in §6.7, e.g. `publisher` instead of `providers`.  We will have to propose the actual list of mandatory elmements if mixing STAC and API-Records. 
-
+Note that [OGC API-Records §6.7](http://docs.ogc.org/DRAFTS/20-004.html#sc_record-collection-overview) defines a different list of possible
+ fields for Collection in §6.7, e.g. `publisher` instead of `providers`.  We will have to propose the actual list of mandatory elmements if mixing STAC and API-Records. 
 
 ### Collection Links
 
@@ -79,23 +83,22 @@ The following Link relations must exist in the Collection as [Link Object](https
 | -------- | --------- | --------- | ------------- | --------------------------- |
 | `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). |
 
-TBD: do we prefer `items` or `search` ?   `search` is defined by SATC but only allowed in the root (Landing page).  There are more parameters defined than in OAFeat.
+TBD: do we prefer `items` or `search` ?   `search` is defined by SATC but only allowed in the root (Landing page).  There are more parameters defined 
+than in OAFeat.
 
-This `search` link relation must have a `type` of `application/geo+json`. It is assumed to represent a GET request.  The collection `search` link can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
+This `search` link relation must have a `type` of `application/geo+json`. It is assumed to represent a GET request.  The collection `search` link 
+can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
 
 ### Collection Assets
 
 | **role**  | **type**                           | **Description**             |
 | -------- | ----------------------------------- | --------------------------- |
-| `metadata` | `application/dif10+xml` |  Collection metadata file in DIF-10 format. |
-
-
+| `metadata` | `application/dif10+xml` | Collection metadata file in DIF-10 format. |
 
 ## API Item Search
 
 The API for Item Search is derived from [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search) and [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).
 The current section defines the mandatory requirements.
-
 
 ### Endpoints
 
@@ -111,23 +114,21 @@ The core parameters for STAC collection search are borrowed from the [STAC Item 
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
 | ----------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| limit       | integer          | OAFeat     | **REQUIRED** The maximum number of results to return (page size).                                                                                                                            |
-| bbox        | \[number]        | OAFeat     | **REQUIRED** Requested bounding box.                                                                                                                                                         |
+| limit       | integer          | OAFeat     | **REQUIRED** The maximum number of results to return (page size).                                                                                        |
+| bbox        | \[number]        | OAFeat     | **REQUIRED** Requested bounding box.                                                                                              |
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
 | intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.   TBD: this allowed on a STAC /search endpoint and not on an OAFeat /items endpoint ?   |
 | ids         | \[string]        | STAC       | **REQUIRED** Array of item ids to return.     TBD: this allowed on a STAC /search endpoint and not on an OAFeat /items endpoint ?     | 
-| externalId | \[string]         | OGC API-Records       | External identifier associated with the item. (same as `ids` ?)  
-
-
+| externalId  | \[string]         | OGC API-Records       | External identifier associated with the item. (same as `ids` ?)  |
 
 ## STAC Items
 
-
 ### Item Properties 
 
-Which item properties from which STAC extensions will CEOS recommend ?  A list of possibilities is shown on https://github.com/stac-utils/stac-crosswalks/tree/master/OGC_17-003r2.
+Which item properties from which STAC extensions will CEOS recommend ?  A list of possibilities is shown on (https://github.com/stac-utils/stac-crosswalks/tree/master/OGC_17-003r2).
 
-[CEOS Best Practices](https://ceos.org/document_management/Working_Groups/WGISS/Documents/WGISS%20Best%20Practices/CEOS%20OpenSearch%20Best%20Practice.pdf) CEOS-BP-12, CEOS-BP-12B, CEOS-BP-12C, CEOS-BP-12D and CEOS-BP-12E can be implemented using Link objects or Asset objects.  The following recommendations apply. 
+[CEOS Best Practices](https://ceos.org/document_management/Working_Groups/WGISS/Documents/WGISS%20Best%20Practices/CEOS%20OpenSearch%20Best%20Practice.pdf) CEOS-BP-12,
+CEOS-BP-12B, CEOS-BP-12C, CEOS-BP-12D and CEOS-BP-12E can be implemented using Link objects or Asset objects.  The following recommendations apply. 
 
 
 ### Item Links
@@ -140,18 +141,17 @@ TBD.
 
 | **role**  | **type**                           | **Description**             |
 | -------- | ----------------------------------- | --------------------------- |
-| `metadata` | `application/vnd.iso.19139+xml` |  Granule metadata file in ISO 19139 format. |
-| `metadata` | `application/gml+xml;profile=http://www.opengis.net/spec/EOMPOM/1.1` |  Granule metadata file in OGC 10-157r4 format. |
+| `metadata` | `application/vnd.iso.19139+xml` | Granule metadata file in ISO 19139 format. |
+| `metadata` | `application/gml+xml;profile=http://www.opengis.net/spec/EOMPOM/1.1` | Granule metadata file in OGC 10-157r4 format. |
 
 `CEOS-BP-012D`
 
 | **role**  | **type**                           | **Description**             |
 | -------- | ----------------------------------- | --------------------------- |
-| `metadata` | various |  Granule metadata file in particular format indicated by media type. |
-| `thumbnail` | various  |  Thumbnail image. |
-| `overview` | various  |  Quicklook or browse image.  Image of the data typically used for making data request decisions |
-| `data` | various  |  Data file or other science data resource; may be large in size. |
-
+| `metadata` | various | Granule metadata file in particular format indicated by media type. |
+| `thumbnail` | various | Thumbnail image. |
+| `overview` | various | Quicklook or browse image.  Image of the data typically used for making data request decisions |
+| `data` | various | Data file or other science data resource; may be large in size. |
 
 ## Contributing
 
