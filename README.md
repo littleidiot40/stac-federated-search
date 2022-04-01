@@ -24,7 +24,7 @@ The following Link relation must exist in the Landing Page (root).
 
 | **rel**  | **href** | **type** | **From**               | **Description**             |
 | -------- | --------- | ---------- | ------------ | --------------------------- |
-| `search` | `/collections` | `application/json` | Extension | **REQUIRED** URI for the (STAC) Collection Search endpoint |
+| `search` | `/collections` | `application/json` | Extension | **REQUIRED** URI for the Collection Search endpoint |
 
 This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The 
 collection `search` link can be distinguished from a regular item `search` link as the `type` for the
@@ -86,10 +86,6 @@ The following Link relations must exist in the Collection as [Link Object](https
 | -------- | --------- | --------- | ------------- | --------------------------- |
 | `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). |
 
-TBD: do we prefer `items` or `search` ?   `search` is defined by STAC but only allowed in the root (Landing page).  There are more parameters defined 
-than in OAFeat.
-
-The Collection Search endpoint and Item Search endpoint can be distinguished as the media type for the item search should be `application/geo+json` instead of `application/json`.
 
 ### Collection Assets
 
