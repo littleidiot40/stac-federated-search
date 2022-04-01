@@ -35,6 +35,9 @@ using the `data` relation, but this does not allow client applications to discov
 search capabilities are available at the `/collections` endpoint, therefore both 
 link relations are required.
 
+> **_NOTE:_**  The above link is different from the rel=`search` link referring to `/search` 
+> as defined in the STAC Item Search API.  Both its `type` and `href` are different.
+
 ## API Collection Search
 
 ### Endpoints
