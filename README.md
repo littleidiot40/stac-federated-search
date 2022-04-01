@@ -31,7 +31,9 @@ collection `search` link can be distinguished from a regular item `search` link 
 item search should be `application/geo+json` instead.  The 
 [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response) specification 
 requires also a link to `/collections`
-using the `data` relation, but this does not allow client applications to discover that search capabilities are available at the `/collections` endpoint, therefore both link relations are required.
+using the `data` relation, but this does not allow client applications to discover that 
+search capabilities are available at the `/collections` endpoint, therefore both 
+link relations are required.
 
 ## API Collection Search
 
@@ -85,7 +87,6 @@ The following Link relations must exist in the Collection as [Link Object](https
 | **rel**  | **href**  | **type** | **From**               | **Description**             |
 | -------- | --------- | --------- | ------------- | --------------------------- |
 | `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). |
-
 
 ### Collection Assets
 
