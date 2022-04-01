@@ -28,7 +28,10 @@ The following Link relation must exist in the Landing Page (root).
 
 This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The 
 collection `search` link can be distinguished from a regular item `search` link as the `type` for the
-item search should be `application/geo+json` instead.
+item search should be `application/geo+json` instead.  The 
+[OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_response) specification 
+requires also a link to `/collections`
+using the `data` relation, but this does not allow client applications to discover that search capabilities are available at the `/collections` endpoint, therefore both link relations are required.
 
 ## API Collection Search
 
@@ -40,7 +43,7 @@ This extension also requires the endpoint below to be implemented as a [`local r
 | --------- | --------------- | --------------- |
 | `/collections` | Collection Collection | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
 
-The response format is `application/json` and is an extension of the the /collections reponse defined bu [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  
+The response format is `application/json` and is an extension of the the /collections reponse defined by [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  
 See [OGC API-Records §6.3](http://docs.ogc.org/DRAFTS/20-004.html#_tldr_local_resources_catalogue) where the endpoint `/collections` is 
 provided as typical example of a `local resources catalogue`.  See also  §9 "Simple Query" of 
 [OGC API - Common - Part 2: Geospatial Data](https://docs.ogc.org/DRAFTS/20-024.html#rc-simple-query-section) for 
@@ -86,8 +89,7 @@ The following Link relations must exist in the Collection as [Link Object](https
 TBD: do we prefer `items` or `search` ?   `search` is defined by STAC but only allowed in the root (Landing page).  There are more parameters defined 
 than in OAFeat.
 
-This `search` link relation must have a `type` of `application/geo+json`. It is assumed to represent a GET request.  The collection `search` link 
-can be distinguished from a regular item `search` link as the `type` for the item search should be `application/geo+json` instead.
+The Collection Search endpoint and Item Search endpoint can be distinguished as the media type for the item search should be `application/geo+json` instead of `application/json`.
 
 ### Collection Assets
 
