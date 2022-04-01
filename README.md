@@ -83,7 +83,7 @@ The following Link relations must exist in the Collection as [Link Object](https
 | -------- | --------- | --------- | ------------- | --------------------------- |
 | `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). |
 
-TBD: do we prefer `items` or `search` ?   `search` is defined by SATC but only allowed in the root (Landing page).  There are more parameters defined 
+TBD: do we prefer `items` or `search` ?   `search` is defined by STAC but only allowed in the root (Landing page).  There are more parameters defined 
 than in OAFeat.
 
 This `search` link relation must have a `type` of `application/geo+json`. It is assumed to represent a GET request.  The collection `search` link 
