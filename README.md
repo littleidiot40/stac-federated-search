@@ -2,7 +2,7 @@
 
 - **Title:** Federated Search
 - **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** col
+- **Field Name Prefix:** fed
 - **Scope:** Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
 - **Owner**: @littleidiot40 @ycespb
