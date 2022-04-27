@@ -39,9 +39,21 @@ link relations are required.
 > *NOTE:*  The above link is different from the rel=`search` link referring to `/search` 
 > as defined in the STAC Item Search API.  Both its `type` and `href` are different.
 
-In a federated search scenario, both a "federating" catalogue (e.g. IDN, CMR or FedEO) and individual data partner "federated" catalogues are involved.  Each are expected to have their individual landing pages.  The `paths` (href) to the individual resources of the STAC API are shown in the tables as relative paths.  They should be understood to be relative to the corresponding API landing page.  When we need to distinguish between a landing Page of a "federating" catalogua and a data partner catalog, we use the notation [federating]/collections or [federated]/collections.
+In a federated search scenario, both a "federating" catalogue (e.g. IDN, CMR or FedEO) and individual data partner
+"federated" catalogues are involved.  Each are expected to have their individual landing pages.  The `paths`
+(href) to the individual resources of the STAC API are shown in the tables as relative paths.  They should be 
+understood to be relative to the corresponding API landing page.  When we need to distinguish between a landing 
+Page of a "federating" catalogua and a data partner catalog, we use the notation \[federating\]/collections 
+or \[federated\]/collections.
 
-In a typical federated search scenario, the federating catalogue may have a local copy of all partner collections it federates.  They can be harvested by the federating catalogue from the data partners which make them available via the "rel=data" link in the data partner catalogue.  The federating catalogue makes available all the partner collections via a collection search endpoint via the "rel=search" link in the federating landing page.  There is no requirement for the data partners to have a collection search endpoint.  Providing the list of STAC collections via rel="data" with each of these collections having a rel="items" endpoint is sufficient.  This would be equivalent to the current CEOS practice in which partner collections including the URL of the items level search interface (OSDD) are provided in DIF10 format for publication by IDN.
+In a typical federated search scenario, the federating catalogue may have a local copy of all partner collections 
+it federates.  They can be harvested by the federating catalogue from the data partners which make them available 
+via the "rel=data" link in the data partner catalogue.  The federating catalogue makes available all the partner 
+collections via a collection search endpoint via the "rel=search" link in the federating landing page.  There 
+is no requirement for the data partners to have a collection search endpoint.  Providing the list of STAC 
+collections via rel="data" with each of these collections having a rel="items" endpoint is sufficient.  This 
+would be equivalent to the current CEOS practice in which partner collections including the URL of the items 
+level search interface (OSDD) are provided in DIF10 format for publication by IDN.
 
 
 ## API Collection Search
@@ -77,7 +89,7 @@ This extension adds a few additional parameters for convenience.
 | ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                 |
 | q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.   |     
 | type        | \[string]        | OGC API-Records   | Resource type.      |
-| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                          |
+| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                     |
 
 ## STAC Collections
 
@@ -95,9 +107,18 @@ The following Link relations must exist in the Collection as [Link Object](https
 
 | **rel**  | **href**  | **type** | **From**               | **Description**             |
 | -------- | --------- | --------- | ------------- | --------------------------- |
-| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that the `href` is relative to the landing page to allow for federated search as explained below.|
+| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint 
+as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that 
+the `href` is relative to the landing page to allow for federated search as explained below. |
 
-In a typical federated search scenario, the intention is to have a two-step search first identifying the appropriate collection(s) via the federating catalogue's collection search endpoint, followed by an item search in that collection.  For the federating catalogue to be able to use directly the item search endpoint provided by the federated catalog of the data partner, the constraint from OAFeat that the href of the link "rel=items" in a (STAC) collection should be relative to the local landing page and should correspond to `/collections/{collection-id}/items` needs to be relaxed.  We propose that the collections made available at the federating catalogue are allowed to have "rel=items" links referring directly to the federated catalog publishing the same collection, thus [federated-1]/collections/{collection-id}/items.  This allows that a federating catalog can delegate item search to the corresponding federated catalog and does not need to implement itself item search endpoints locally.
+In a typical federated search scenario, the intention is to have a two-step search first identifying the appropriate collection(s) via 
+the federating catalogue's collection search endpoint, followed by an item search in that collection.  For the federating catalogue to 
+be able to use directly the item search endpoint provided by the federated catalog of the data partner, the constraint from OAFeat 
+that the href of the link "rel=items" in a (STAC) collection should be relative to the local landing page and should correspond 
+to `/collections/{collection-id}/items` needs to be relaxed.  We propose that the collections made available at the federating 
+catalogue are allowed to have "rel=items" links referring directly to the federated catalog publishing the same collection, 
+thus \[federated-1\]/collections/{collection-id}/items.  This allows that a federating catalog can delegate item search to the 
+corresponding federated catalog and does not need to implement itself item search endpoints locally.
 
 ### Collection Assets
 
