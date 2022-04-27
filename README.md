@@ -55,7 +55,6 @@ collections via rel="data" with each of these collections having a rel="items" e
 would be equivalent to the current CEOS practice in which partner collections including the URL of the items 
 level search interface (OSDD) are provided in DIF10 format for publication by IDN.
 
-
 ## API Collection Search
 
 ### Endpoints
@@ -107,9 +106,7 @@ The following Link relations must exist in the Collection as [Link Object](https
 
 | **rel**  | **href**  | **type** | **From**               | **Description**             |
 | -------- | --------- | --------- | ------------- | --------------------------- |
-| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint 
-as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that 
-the `href` is relative to the landing page to allow for federated search as explained below. |
+| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that the `href` is relative to the landing page to allow for federated search as explained below. |
 
 In a typical federated search scenario, the intention is to have a two-step search first identifying the appropriate collection(s) via 
 the federating catalogue's collection search endpoint, followed by an item search in that collection.  For the federating catalogue to 
