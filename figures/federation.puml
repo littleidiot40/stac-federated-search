@@ -1,0 +1,78 @@
+@startuml
+
+' Figure 20
+
+skinparam componentStyle uml2
+skinparam ArrowColor Black
+skinparam ClassBorderColor Black
+skinparam ComponentBorderColor Black
+skinparam ObjectBorderColor Black
+
+hide circle
+' hide <<Resource>> circle
+show <<GeoJSON>> circle
+
+
+
+
+object "<<JSON>>\nidn:LandingPage" as federating_ldp {
+   path = "https://idn.ceos.org/"
+}
+
+
+
+object "<<JSON>>\nidn:Collections" as federating_collections {
+   path = "https://idn.ceos.org/collections"
+}
+
+federating_ldp ..> federating_collections : "rel="data""
+
+object "<<JSON>>\nfedeo:LandingPage" as federated_ldp {
+   path = "https://fedeo.ceos.org"
+}
+
+object "<<JSON>>\nfedeo:Collections" as federated_collections {
+  path = "https://fedeo.ceos.org/collections"
+}
+
+object "<<GeoJSON>>\nfedeo:Search" as federated_search {
+   path = "https://fedeo.ceos.org/search"
+}
+
+federated_ldp --> federated_collections : "rel="data""
+federated_ldp --> federated_search : "rel="search""
+
+federating_ldp --> federating_collections : "rel="search""
+
+
+
+
+object "<<JSON>>\nMER_FRS_1P:Collection" as MER_FRS_1P {
+      path = "https://fedeo.ceos.org/collections/MER_FRS_1P"
+}
+
+object "<<JSON>>\nMER_FRS_1P:Collection" as MER_FRS_1P_federating {
+      path = "https://idn.ceos.org/collections/MER_FRS_1P"
+}
+
+
+object "<<GeoJSON>>\n:Features" as federated_items {
+  path = "https://fedeo.ceos.org/collections/MER_FRS_1P/items"
+}
+
+federated_collections o-down- MER_FRS_1P
+
+federating_collections o-down- MER_FRS_1P_federating
+
+
+MER_FRS_1P --> federated_items : "rel="items""
+
+MER_FRS_1P_federating --> federated_items : "rel="items""
+
+MER_FRS_1P_federating --> federated_search : "rel="search""
+
+
+
+
+
+@enduml
