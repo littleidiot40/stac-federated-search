@@ -117,6 +117,11 @@ catalogue are allowed to have "rel=items" links referring directly to the federa
 thus \[federated-1\]/collections/{collection-id}/items.  This allows that a federating catalog can delegate item search to the 
 corresponding federated catalog and does not need to implement itself item search endpoints locally.
 
+Alternatively, if a federated catalog does not only advertise rel="items" links in its collections, but advertises also a STAC search
+endpoint (rel="search") in its landing page, the federating catalog can include this cross-collection search endpoint via a rel="search" link in the 
+collection metadata obtained from the federated catalog.  With this approach, the OAFeat convention for the href of a rel="items" endpoint does not 
+need to be relaxed and can be considered an approach defined by the current Extension.
+
 ### Collection Assets
 
 | **role**  | **type**                           | **Description**             |
