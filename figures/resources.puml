@@ -1,0 +1,66 @@
+@startuml
+
+
+allowmixing
+
+skinparam componentStyle uml2
+skinparam ArrowColor Black
+skinparam ClassBorderColor Black
+skinparam ComponentBorderColor Black
+skinparam ObjectBorderColor Black
+
+hide circle
+' hide <<Resource>> circle
+show <<GeoJSON>> circle
+' hide <<Interface>> circle
+
+
+' interface "<<Resource>>\nC" as CreateFeature #Plum
+
+interface LandingPage <<Resource>>  #Plum {
+    +GET()
+}
+
+interface APIDefinition <<Resource>> #Plum {
+   +GET()
+}
+
+interface Conformance <<Resource>> #Plum {
+   +GET()
+}
+
+interface Collections <<Resource>> #Plum {
+   +GET()
+}
+
+interface Collection <<Resource>> #Plum {
+   +GET()
+}
+
+interface Features <<Resource>> #Plum {
+   +GET()
+}
+
+interface Feature <<Resource>> #Plum {
+   +GET()
+}
+
+interface Search <<Resource>> #Plum {
+   +GET()
+   +POST()
+}
+
+
+LandingPage .left.> APIDefinition : "rel="service-desc"" 
+LandingPage .right.> Conformance : "rel="conformance"" 
+LandingPage ..> Search : "rel="search"" 
+LandingPage -down-> Collections : "rel="data"\nrel="search"" 
+Collections .down.> Collection  
+
+Collection .down.> Features : "rel="items""
+Collection -right-> Search : "rel="search""
+Features .down.> Feature 
+
+
+
+@enduml
