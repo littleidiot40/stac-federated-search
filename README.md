@@ -55,6 +55,11 @@ collections via rel="data" with each of these collections having a rel="items" e
 would be equivalent to the current CEOS practice in which partner collections including the URL of the items 
 level search interface (OSDD) are provided in DIF10 format for publication by IDN.
 
+The figure below depicts how a federating catalog (IDN) and federated catalog can share items search endpoints in 
+a STAC context to  allow for a two-step search as currently supported by the CEOS Best Practices for OpenSearch.
+In this example, a collection (ENVISAT MERIS Full Resolution) advertises its item search endpoint in the collections
+advertised by the federating catalog (IDN).
+
 ![Example of Federated and Federating catalogs](./figures/federation.png)
 
 ## API Collection Search
