@@ -55,6 +55,8 @@ collections via rel="data" with each of these collections having a rel="items" e
 would be equivalent to the current CEOS practice in which partner collections including the URL of the items 
 level search interface (OSDD) are provided in DIF10 format for publication by IDN.
 
+![Example of Federated and Federating catalogs](./figures/federation.png)
+
 ## API Collection Search
 
 ### Endpoints
