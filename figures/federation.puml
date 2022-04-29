@@ -44,7 +44,7 @@ federated_ldp --> federated_search : "rel="search""
 
 federating_ldp --> federating_collections : "rel="search""
 
-
+federating_ldp .right.> federated_ldp : "rel="child""
 
 
 object "<<JSON>>\nMER_FRS_1P:Collection" as MER_FRS_1P {
