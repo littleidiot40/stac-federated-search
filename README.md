@@ -43,7 +43,7 @@ In a federated search scenario, both a "federating" catalogue (e.g. IDN, CMR or 
 "federated" catalogues are involved.  Each are expected to have their individual landing pages.  The `paths`
 (href) to the individual resources of the STAC API are shown in the tables as relative paths.  They should be 
 understood to be relative to the corresponding API landing page.  When we need to distinguish between a landing 
-Page of a "federating" catalogua and a data partner catalog, we use the notation \[federating\]/collections 
+Page of a "federating" catalog and a data partner catalog, we use the notation \[federating\]/collections 
 or \[federated\]/collections.
 
 In a typical federated search scenario, the federating catalogue may have a local copy of all partner collections 
