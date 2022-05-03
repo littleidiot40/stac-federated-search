@@ -180,13 +180,12 @@ properties or links when he is being included in one or more federating catalogs
 
 |  **type**                           | **Description**             |
 | -------- | --------------------------- |
-| `root` |  URL to the root STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side. |
-| `parent` |  URL to the parent STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side . |
-| `collection` |  STRONGLY RECOMMENDED. URL to a Collection in the data provider (federated) catalogue, not at the federating catalog side.  |
+| `root` | URL to the root STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side. |
+| `parent` | URL to the parent STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side . |
+| `collection` | STRONGLY RECOMMENDED. URL to a Collection in the data provider (federated) catalogue, not at the federating catalog side. |
 
 > *NOTE:*  This may make it difficult to find the item search endpoint at the data provider side as it is presumably not visible inside
 > the collection metadata itself but possibly via a local `/search` endpoint. 
-
 
 ### Item Assets
 
