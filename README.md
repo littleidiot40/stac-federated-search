@@ -174,7 +174,19 @@ CEOS-BP-12B, CEOS-BP-12C, CEOS-BP-12D and CEOS-BP-12E can be implemented using L
 
 ### Item Links
 
-TBD.
+In a catalog federation, the definition of the [relation types](https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#relation-types) should be interpreted with respect to the landing page and the structure of the catalog at the 
+data provider (federated catalog).  Indeed, a data provider is not expected to modify metadata 
+properties or links when he is being included in one or more federating catalogs.
+
+|  **type**                           | **Description**             |
+| -------- | --------------------------- |
+| `root` |  URL to the root STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side. |
+| `parent` |  URL to the parent STAC entity (Catalog or Collection) in the data provider (federated) catalogue, not at the federating catalog side . |
+| `collection` |  STRONGLY RECOMMENDED. URL to a Collection in the data provider (federated) catalogue, not at the federating catalog side.  |
+
+> *NOTE:*  This may make it difficult to find the item search endpoint at the data provider side as it is presumably not visible inside
+> the collection metadata itself but possibly via a local `/search` endpoint. 
+
 
 ### Item Assets
 
