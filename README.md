@@ -103,8 +103,8 @@ This extension adds a few additional parameters for convenience.
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
 | intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.           |
 | ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                 |
-| q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.   |     
-| type        | \[string]        | OGC API-Records   | Resource type.      |
+| q           | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | **REQUIRED** String value for textual search.   |     
+| type        | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | Resource type.      |
 | externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                     |
 
 ## STAC Collections
