@@ -11,7 +11,7 @@
 This document explains the Federated Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
 (STAC) specification.
 This extension provides support fo the federated discovery use case. 
-It uses the [OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) specification to achieve this.
+It uses the [OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) specification to achieve this.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
