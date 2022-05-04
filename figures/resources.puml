@@ -57,10 +57,16 @@ LandingPage ..> Search : "rel="search""
 LandingPage -down-> Collections : "rel="data"\nrel="search"" 
 Collections .down.> Collection  
 
+Collections ..> Collections : "rel="next"\nrel="previous""
+
 Collection .down.> Features : "rel="items""
+
+
+
 Collection -right-> Search : "rel="search""
 Features .down.> Feature 
 
+Features ..> Features : "rel="next"\nrel="previous""
 
 
 @enduml
