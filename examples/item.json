@@ -38,6 +38,7 @@
     "properties": {
         "datetime": "2020-12-11T22:38:32Z"
     },
+    "collection": "simple-collection",
     "links": [
         {
             "rel": "self",
