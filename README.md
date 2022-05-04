@@ -5,12 +5,15 @@
 - **Field Name Prefix:** fed
 - **Scope:** Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
+- **Dependencies** 
+  - [STAC API - Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections)
+  - [STAC API - Item Search](https://github.com/radiantearth/stac-api-spec/tree/master/item-search)
 - **Owner**: @littleidiot40 @ycespb
 
 This document explains the Federated Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
 (STAC) specification.
 This extension provides support fo the federated discovery use case. 
-It uses the [OGC records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) specification to achieve this.
+It uses the [OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) specification to achieve this.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
@@ -71,9 +74,15 @@ This extension also requires the endpoint below to be implemented as a [`local r
 
 | Endpoint  | Returns         | Description     |
 | --------- | --------------- | --------------- |
-| `/collections` | Collection Collection | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
+| `/collections` | List of Collections | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
 
-The response format is `application/json` and is an extension of the /collections response defined by [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  
+The response format is `application/json` and is an extension of the /collections response defined 
+by [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html) and
+[STAC API-Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections). 
+It may include pagination link as depicted in the figure below.
+
+![Resource diagram](./figures/resources.png)
+
 See [OGC API-Records §6.3](http://docs.ogc.org/DRAFTS/20-004.html#_tldr_local_resources_catalogue) where the endpoint `/collections` is 
 provided as typical example of a `local resources catalogue`.  See also  §9 "Simple Query" of 
 [OGC API - Common - Part 2: Geospatial Data](https://docs.ogc.org/DRAFTS/20-024.html#rc-simple-query-section) for 
@@ -84,7 +93,7 @@ additional information about the expected response content.
 The following list of parameters is used to narrow search queries. They can all be represented as query 
 string parameters in a GET request (**REQUIRED**), or as JSON entity fields in a POST request. 
 
-The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search).
+The core parameters for STAC collection search are borrowed from the [STAC API - Item Search](https://github.com/radiantearth/stac-api-spec/tree/master/item-search).
 This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
@@ -94,9 +103,9 @@ This extension adds a few additional parameters for convenience.
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
 | intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.           |
 | ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                 |
-| q           | \[string]        | OGC API-Records   | **REQUIRED** String value for textual search.   |     
-| type        | \[string]        | OGC API-Records   | Resource type.      |
-| externalId  | \[string]        | OGC API-Records   | External identifier associated with the collection. (same as `ids` ?)                     |
+| q           | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | **REQUIRED** String value for textual search.   |     
+| type        | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | Resource type.      |
+| externalId  | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#core-query-parameters-externalid) | External identifier associated with the collection. (same as `ids` ?)                     |
 
 ## STAC Collections
 
@@ -114,7 +123,7 @@ The following Link relations must exist in the Collection as [Link Object](https
 
 | **rel**  | **href**  | **type** | **From**               | **Description**             |
 | -------- | --------- | --------- | ------------- | --------------------------- |
-| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.1.3 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that the `href` is relative to the landing page to allow for federated search as explained below. |
+| `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.4 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that the `href` is relative to the landing page to allow for federated search as explained below. |
 
 In a typical federated search scenario, the intention is to have a two-step search first identifying the appropriate collection(s) via 
 the federating catalogue's collection search endpoint, followed by an item search in that collection.  For the federating catalogue to 
@@ -151,7 +160,7 @@ This conformance class also requires the endpoint below to be implemented.
  
 ### Query Parameters and Fields
 
-The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search). 
+The core parameters for STAC collection search are borrowed from the [STAC API - Item Search](https://github.com/radiantearth/stac-api-spec/tree/master/item-search). 
 This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
@@ -161,7 +170,7 @@ This extension adds a few additional parameters for convenience.
 | datetime    | string           | OAFeat     | **REQUIRED** Single date+time, or a range ('/' separator), formatted to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6). Use double dots `..` for open date ranges. |
 | intersects  | GeoJSON Geometry | STAC       | Searches Collections by performing intersection between their geometry and provided GeoJSON geometry.  All GeoJSON geometry types must be supported.   TBD: this allowed on a STAC /search endpoint and not on an OAFeat /items endpoint ?   |
 | ids         | \[string]        | STAC       | **REQUIRED** Array of item ids to return.     TBD: this allowed on a STAC /search endpoint and not on an OAFeat /items endpoint ?     | 
-| externalId  | \[string]         | OGC API-Records       | External identifier associated with the item. (same as `ids` ?)  |
+| externalId  | \[string]         | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#core-query-parameters-externalid) | External identifier associated with the item. |
 
 ## STAC Items
 
