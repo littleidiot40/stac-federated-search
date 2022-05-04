@@ -6,21 +6,7 @@
           "type": "Feature",
           "id": "item",
           "stac_version": "1.0.0",
-          "stac_extensions": [],
           "collection": "C1_PANA_STUC00GTD.v1",
-          "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                  [
-                      -125.453053,
-                      31.566639
-                  ],
-                  [
-                      -116.897793,
-                      37.649117
-                  ]
-              ]
-          },
           "bbox": [
               -125.453053,
               31.566639,
