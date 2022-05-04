@@ -5,7 +5,7 @@
 - **Field Name Prefix:** fed
 - **Scope:** Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Dependencies: [STAC API - Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections)
+- **Dependencies** [STAC API - Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections)
 - **Owner**: @littleidiot40 @ycespb
 
 This document explains the Federated Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
