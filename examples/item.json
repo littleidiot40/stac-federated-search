@@ -1,61 +1,44 @@
 {
-  "type": "FeatureCollection",
-  "stac_version": "1.0.0",
-  "features": [
-      {
-          "type": "Feature",
-          "id": "item",
-          "stac_version": "1.0.0",
-          "collection": "C1_PANA_STUC00GTD.v1",
-          "bbox": [
-              -125.453053,
-              31.566639,
-              -116.897793,
-              37.649117
-          ],
-          "links": [
-              {
-                  "rel": "self",
-                  "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/items"
-              },
-              {
-                  "rel": "parent",
-                  "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1"
-              },
-              {
-                  "rel": "collection",
-                  "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1"
-              },
-              {
-                  "rel": "root",
-                  "href": "https://uops.nrsc.gov.in/stac"
-              }
-          ],
-          "properties": {
-              "datetime": "2017-10-23T00:00:00.000Z",
-              "start_datetime": "2017-10-23T00:00:00.000Z",
-              "end_datetime": "2017-10-23T23:59:59.000Z"
-          },
-          "assets": {
-              "data": {
-                  "title": "This file may be downloaded directly from IRSO.",
-                  "href": "https://uops.nrsc.gov.in/data/C1_PANA_STUC00GTD.v1/foo.h5"
-              },
-              "metadata": {
-                  "href": "https://uops.nrsc.gov.in/data/C1_PANA_STUC00GTD.v1/foo.xml",
-                  "type": "application/xml"
-              }
-          }
-      }
-  ],
-  "links": [
-      {
-          "rel": "self",
-          "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/items"
-      },
-      {
-          "rel": "root",
-          "href": "https://uops.nrsc.gov.in/stac"
-      }
-  ]
+    "type": "Feature",
+    "id": "item",
+    "stac_version": "1.0.0",
+    "bbox": [
+        -125.453053,
+        31.566639,
+        -116.897793,
+        37.649117
+    ],
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/items"
+        },
+        {
+            "rel": "parent",
+            "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1"
+        },
+        {
+            "rel": "collection",
+            "href": "https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1"
+        },
+        {
+            "rel": "root",
+            "href": "https://uops.nrsc.gov.in/stac"
+        }
+    ],
+    "properties": {
+        "datetime": "2017-10-23T00:00:00.000Z",
+        "start_datetime": "2017-10-23T00:00:00.000Z",
+        "end_datetime": "2017-10-23T23:59:59.000Z"
+    },
+    "assets": {
+        "data": {
+            "title": "This file may be downloaded directly from IRSO.",
+            "href": "https://uops.nrsc.gov.in/data/C1_PANA_STUC00GTD.v1/foo.h5"
+        },
+        "metadata": {
+            "href": "https://uops.nrsc.gov.in/data/C1_PANA_STUC00GTD.v1/foo.xml",
+            "type": "application/xml"
+        }
+    }
 }
