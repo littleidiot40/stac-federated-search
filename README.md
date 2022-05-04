@@ -71,9 +71,14 @@ This extension also requires the endpoint below to be implemented as a [`local r
 
 | Endpoint  | Returns         | Description     |
 | --------- | --------------- | --------------- |
-| `/collections` | Collection Collection | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
+| `/collections` | List of Collections | Collection Search endpoint.  When invoked without any query parameters, no filter is applied. |
 
-The response format is `application/json` and is an extension of the /collections response defined by [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html).  
+The response format is `application/json` and is an extension of the /collections response defined by [OGC API-Features](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html)  
+and [STAC API-Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections).  It may include pagination 
+link as depicted in the figure below.
+
+![Resource diagram](./figures/resources.png)
+
 See [OGC API-Records §6.3](http://docs.ogc.org/DRAFTS/20-004.html#_tldr_local_resources_catalogue) where the endpoint `/collections` is 
 provided as typical example of a `local resources catalogue`.  See also  §9 "Simple Query" of 
 [OGC API - Common - Part 2: Geospatial Data](https://docs.ogc.org/DRAFTS/20-024.html#rc-simple-query-section) for 
