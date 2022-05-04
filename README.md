@@ -93,7 +93,7 @@ additional information about the expected response content.
 The following list of parameters is used to narrow search queries. They can all be represented as query 
 string parameters in a GET request (**REQUIRED**), or as JSON entity fields in a POST request. 
 
-The core parameters for STAC collection search are borrowed from the [STAC Item Search](https://github.com/radiantearth/stac-api-spec/item-search).
+The core parameters for STAC collection search are borrowed from the [STAC API - Item Search](https://github.com/radiantearth/stac-api-spec/tree/master/item-search).
 This extension adds a few additional parameters for convenience.
 
 | Parameter   | Type             | Source API | Description                                                                                                                                                                     |
