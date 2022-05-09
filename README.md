@@ -8,6 +8,8 @@
 - **Dependencies** 
   - [STAC API - Collections](https://github.com/radiantearth/stac-api-spec/tree/master/collections)
   - [STAC API - Item Search](https://github.com/radiantearth/stac-api-spec/tree/master/item-search)
+  - [OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html)
+  - [OGC API-Features - Part 3:Filtering](https://docs.opengeospatial.org/DRAFTS/19-079r1.html).
 - **Owner**: @littleidiot40 @ycespb
 
 This document explains the Federated Search Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) 
