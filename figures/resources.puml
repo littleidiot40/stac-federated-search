@@ -70,7 +70,7 @@ Collection .down.> Features : "rel="items""
 
 Collection -right-> Search : "rel="search""
 Collection --> Queryables : "rel="queryables""
-' LandingPage --> Queryables : "rel="queryables""
+LandingPage --> Queryables : "rel="queryables""
 Features .down.> Feature 
 
 Features ..> Features : "rel="next"\nrel="prev""
