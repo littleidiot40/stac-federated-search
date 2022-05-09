@@ -27,8 +27,9 @@ The following Link relation must exist in the Landing Page (root).
 
 | **rel**  | **href** | **type** | **From**               | **Description**             |
 | -------- | --------- | ---------- | ------------ | --------------------------- |
-| `search` | `/collections` | `application/json` | Extension | **REQUIRED** URI for the Collection Search endpoint |
-| `data`   | `/collections` | `application/json` | OAFeat | **REQUIRED** URI for the list of collections |
+| `search` | `/collections` | `application/json` | Extension | **REQUIRED** URL for the Collection Search endpoint |
+| `queryables` | `/collections/queryables` | `application/schema+json` | OAFeat Part 3 | **REQUIRED** URL advertising available queryables for collection search as per [§6.2 of OGC API-Features - Part 3:Filtering](https://docs.opengeospatial.org/DRAFTS/19-079r1.html#filter-queryables). |
+| `data`   | `/collections` | `application/json` | OAFeat | **REQUIRED** URL for the list of collections |
 
 This `search` link relation must have a `type` of `application/json`. It is assumed to represent a GET request.  The 
 collection `search` link can be distinguished from a regular item `search` link as the `type` for the
@@ -105,7 +106,11 @@ This extension adds a few additional parameters for convenience.
 | ids         | \[string]        | STAC       | **REQUIRED** Array of Collection ids to return.                                                                 |
 | q           | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | **REQUIRED** String value for textual search.   |     
 | type        | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) | Resource type.      |
-| externalId  | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#core-query-parameters-externalid) | External identifier associated with the collection. (same as `ids` ?)                     |
+| externalId  | \[string]        | [OGC API-Records](https://docs.ogc.org/DRAFTS/20-004.html#core-query-parameters-externalid) | External identifier associated with the collection.                  |
+
+Collections shall advertise the query parameters they support at the `/collections/{collection-id}/queryables` endpoint that 
+shall return a JSON Schema document as defined in [OGC API-Features - Part 3:Filtering](https://docs.opengeospatial.org/DRAFTS/19-079r1.html#filter-queryables).
+
 
 ## STAC Collections
 
@@ -124,6 +129,7 @@ The following Link relations must exist in the Collection as [Link Object](https
 | **rel**  | **href**  | **type** | **From**               | **Description**             |
 | -------- | --------- | --------- | ------------- | --------------------------- |
 | `items` | `/collections/{collection-id}/items` | `application/geo+json` | OAFeat | **REQUIRED** URI for the Item Search endpoint as per [§8.4 of OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_links). The current extension does not require that the `href` is relative to the landing page to allow for federated search as explained below. |
+| `queryables` | `/collections/{collection-id}/queryables` | `application/schema+json` | OAFeat Part 3 | **REQUIRED** URI advertising available queryables as per [§6.2 of OGC API-Features - Part 3:Filtering](https://docs.opengeospatial.org/DRAFTS/19-079r1.html#filter-queryables). |
 
 In a typical federated search scenario, the intention is to have a two-step search first identifying the appropriate collection(s) via 
 the federating catalogue's collection search endpoint, followed by an item search in that collection.  For the federating catalogue to 
