@@ -111,7 +111,6 @@ This extension adds a few additional parameters for convenience.
 Collections shall advertise the query parameters they support at the `/collections/{collection-id}/queryables` endpoint that 
 shall return a JSON Schema document as defined in [OGC API-Features - Part 3:Filtering](https://docs.opengeospatial.org/DRAFTS/19-079r1.html#filter-queryables).
 
-
 ## STAC Collections
 
 ### Collection Properties
