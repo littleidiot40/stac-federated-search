@@ -50,6 +50,10 @@ interface Search <<Resource>> #Plum {
    +POST()
 }
 
+interface Queryables <<Resource>> #Plum {
+   +GET()
+}
+
 
 LandingPage .left.> APIDefinition : "rel="service-desc"" 
 LandingPage .right.> Conformance : "rel="conformance"" 
@@ -63,7 +67,10 @@ Collection .down.> Features : "rel="items""
 
 
 
+
 Collection -right-> Search : "rel="search""
+Collection --> Queryables : "rel="queryables""
+LandingPage --> Queryables : "rel="queryables""
 Features .down.> Feature 
 
 Features ..> Features : "rel="next"\nrel="prev""
