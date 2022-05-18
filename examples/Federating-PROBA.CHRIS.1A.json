@@ -105,9 +105,7 @@
 		}
 	],
 	"id": "PROBA.CHRIS.1A",
-	"stac_extensions": [
-		"collection-assets"
-	],
+	"stac_extensions": [],
 	"providers": [
 		{
 			"roles": [
