@@ -9,4 +9,4 @@ If the user then used the search rel=items link to perform a second search as fo
 
 `GET https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/items?bbox=foo`
 
-The results of that search are rendered in [item.json](item.json)
+The results of that search are rendered in item.json.
