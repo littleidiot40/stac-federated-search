@@ -18,7 +18,7 @@ This extension provides support fo the federated discovery use case.
 It uses the [OGC API-Records](http://docs.ogc.org/DRAFTS/20-004.html#_query_parameters) specification to achieve this.
 
 - Examples:
-  - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
+  - Item example: Shows the basic usage of the extension in a STAC Item
   - [Collection example](examples/collection.json): Shows the basic usage of the extension in a STAC Collection
 - [JSON Schema](json-schema/schema.json)
 - [Changelog](./CHANGELOG.md)
