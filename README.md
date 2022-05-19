@@ -57,7 +57,7 @@ it federates.  They can be harvested by the federating catalogue from the data p
 via the "rel=data" link in the data partner catalogue.  The federating catalogue makes available all the partner 
 collections via a collection search endpoint via the "rel=search" link in the federating landing page.  There 
 is no requirement for the data partners to have a collection search endpoint.  Providing the list of STAC 
-collections via rel="data" with each of these collections having a rel="items" endpoint is sufficient.  This 
+collections via rel="data" with each of these collections having a rel="items" endpoint and a rel="queryables" endpoint declaring available granule search parameters is sufficient.  This 
 would be equivalent to the current CEOS practice in which partner collections including the URL of the items 
 level search interface (OSDD) are provided in DIF10 format for publication by IDN.
 
