@@ -1,0 +1,106 @@
+{
+	"type": "object",
+	"title": "Available collection search parameters (STAC)",
+	"properties": {
+		"limit": {
+			"title": "limit",
+			"type": "integer"
+		},
+		"bbox": {
+			"title": "bbox",
+			"type": "array",
+			"minItems": 4,
+			"maxItems": 6,
+			"items": {
+				"type": "number"
+			}
+		},
+		"datetime": {
+			"title": "datetime",
+			"type": "string"
+		},
+		"intersects": {
+			"title": "intersects",
+			"type": "string"
+		},
+		"ids": {
+			"title": "ids",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "number"
+			}
+		},
+		"externalId": {
+			"title": "externalId",
+			"type": "string"
+		},
+		"type": {
+			"title": "type",
+			"type": "string",
+			"format": "uri"
+		},
+		"q": {
+			"title": "q",
+			"type": "string"
+		},
+		"instrument": {
+			"title": "instrument - {eo:instrument}",
+			"type": "string",
+			"enum": [
+				"AATSR",
+				"ACC",
+				"AMI/SAR",
+				"AMSR",
+				"ATSR-1",
+				"ATSR-2",
+				"CHRIS",
+				"MERIS",
+				"MODIS",
+				"OLCI",
+				"PALSAR"
+			]
+		},
+		"platform": {
+			"title": "platform - {eo:platform}",
+			"type": "string",
+			"enum": [
+				"ADEOS-I",
+				"ALOS-1",
+				"ALOS-2",
+				"AQUA",
+				"CryoSat-2",
+				"ERS-1",
+				"ERS-2",
+				"Envisat",
+				"GCOM-C1",
+				"PROBA-1",
+				"PROBA-V",
+				"Sentinel-1A",
+				"Sentinel-1B",
+				"Sentinel-2",
+				"Sentinel-3A"
+			]
+		},
+		"organisationName": {
+			"title": "instrument - {eo:organisationName}",
+			"type": "string",
+			"enum": [
+				"CEDA",
+				"CMEMS",
+				"DE/DLR",
+				"ESA/ESRIN",
+				"FR/CNES",
+				"JP/JAXA/EOC",
+				"VITO"
+			]
+		},
+		"classifiedAs": {
+			"title": "classifiedAs - {semantic:classifiedAs}",
+			"type": "string",
+			"format": "uri"
+		}
+	},
+	"$schema": "http://json-schema.org/draft/2019-09/schema",
+	"$id": "https://federating.cat.org/collections/queryables"
+}
