@@ -23,5 +23,7 @@ The available search parameters for granule search within a collection can be re
 
 `GET https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/queryables`
 
+`GET https://uops.nrsc.gov.in/stac/collections/PROBA.CHRIS.1A/queryables`
+
 [granule-queryables.json](granule-queryables.json) is an example response advertizing STAC search parameters and additional parameters supported 
 by this endpoint.
