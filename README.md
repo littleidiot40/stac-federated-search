@@ -64,7 +64,7 @@ level search interface (OSDD) are provided in DIF10 format for publication by ID
 The figure below depicts how a federating catalog (e.g. IDN) and federated catalog (e.g. FedEO) can share items search 
 endpoints in 
 a STAC context to  allow for a two-step search as currently supported by the CEOS Best Practices for OpenSearch.
-In this example, a collection (ENVISAT MERIS Full Resolution) advertises its item search endpoint in the collections
+In this example, a collection (PROBA CHRIS) advertises its item search endpoint in the collections
 advertised by the federating catalog (IDN).
 
 ![Example of Federated and Federating catalogs](./figures/federation.png)
