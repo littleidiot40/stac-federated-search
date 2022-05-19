@@ -22,3 +22,6 @@ corresponding [OpenSearch specification](https://docs.opengeospatial.org/is/13-0
 The available search parameters for granule search within a collection can be retrieved like this:
 
 `GET https://uops.nrsc.gov.in/stac/collections/C1_PANA_STUC00GTD.v1/queryables`
+
+[granule-queryables.json](granule-queryables.json) is an example response advertizing STAC search parameters and additional parameters supported 
+by this endpoint.
