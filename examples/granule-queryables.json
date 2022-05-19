@@ -4,7 +4,8 @@
 	"properties": {
 		"limit": {
 			"title": "limit",
-			"type": "integer"
+			"type": "integer",
+			"minimum": 0
 		},
 		"bbox": {
 			"title": "bbox",
@@ -20,8 +21,7 @@
 			"type": "string"
 		},
 		"intersects": {
-			"title": "intersects",
-			"type": "string"
+			"$ref": "https://geojson.org/schema/Geometry.json"
 		},
 		"ids": {
 			"title": "ids",
@@ -51,5 +51,5 @@
 		}
 	},
 	"$schema": "http://json-schema.org/draft/2019-09/schema",
-	"$id": "https://federating.cat.org/collections/proba.chris.1a/queryables"
+	"$id": "https://federating.stac.api.com/stac/collections/proba.chris.1a/queryables"
 }
