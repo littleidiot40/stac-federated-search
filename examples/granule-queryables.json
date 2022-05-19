@@ -51,5 +51,5 @@
 		}
 	},
 	"$schema": "http://json-schema.org/draft/2019-09/schema",
-	"$id": "https://federating.stac.api.com/stac/collections/proba.chris.1a/queryables"
+	"$id": "https://fedeo.ceos.org/collections/proba.chris.1a/queryables"
 }
