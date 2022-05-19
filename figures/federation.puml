@@ -57,8 +57,23 @@ object "<<JSON>>\nPROBA_CHRIS_1A:Collection" as PROBA_CHRIS_1A_federating {
 
 
 object "<<GeoJSON>>\n:Features" as federated_items {
-  path = "https://fedeo.ceos.org/collections/PROBA_CHRIS_1A/items"
+  path = "https://fedeo.ceos.org/collections/\n  PROBA_CHRIS_1A/items"
 }
+
+object "<<JSONSchema>>\n:Queryables" as queryables {
+  path = "https://fedeo.ceos.org/collections/\n  PROBA_CHRIS_1A/queryables"
+}
+
+object "<<JSONSchema>>\n:Queryables" as federated_queryables {
+  path = "https://fedeo.ceos.org/queryables"
+}
+
+object "<<JSONSchema>>\n:Queryables" as federating_queryables {
+  path = "https://idn.ceos.org/queryables"
+}
+
+federating_ldp .up.> federating_queryables : "rel="queryables""
+federated_ldp .up.> federated_queryables : "rel="queryables""
 
 federated_collections o-down- PROBA_CHRIS_1A
 
@@ -66,6 +81,10 @@ federating_collections o-down- PROBA_CHRIS_1A_federating
 
 
 PROBA_CHRIS_1A --> federated_items : "rel="items""
+
+PROBA_CHRIS_1A ..> queryables : "rel="queryables""
+
+PROBA_CHRIS_1A_federating ..> queryables : "rel="queryables""
 
 PROBA_CHRIS_1A_federating --> federated_items : "rel="items""
 
