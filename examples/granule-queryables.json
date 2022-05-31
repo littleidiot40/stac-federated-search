@@ -1,0 +1,55 @@
+{
+	"type": "object",
+	"title": "Available search parameters for PROBA.CHRIS.1A STAC collection",
+	"properties": {
+		"limit": {
+			"title": "limit",
+			"type": "integer",
+			"minimum": 0
+		},
+		"bbox": {
+			"title": "bbox",
+			"type": "array",
+			"minItems": 4,
+			"maxItems": 6,
+			"items": {
+				"type": "number"
+			}
+		},
+		"datetime": {
+			"title": "datetime",
+			"type": "string"
+		},
+		"intersects": {
+			"$ref": "https://geojson.org/schema/Geometry.json"
+		},
+		"ids": {
+			"title": "ids",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "number"
+			}
+		},
+		"productType": {
+			"title": "instrument - {eo:instrument}",
+			"type": "string",
+			"enum": [
+				"CHR_MO1_1P",
+				"CHR_MO2_1P",
+				"CHR_MO3_1P",
+				"CHR_MO4_1P"
+			]
+		},
+		"orbitNumber": {
+			"title": "orbitNumber - {eo:orbitNumber}",
+			"type": "integer"
+		},
+		"sensorMode": {
+			"title": "sensorMode - {eo:sensorMode}",
+			"type": "string"
+		}
+	},
+	"$schema": "http://json-schema.org/draft/2019-09/schema",
+	"$id": "https://fedeo.ceos.org/collections/proba.chris.1a/queryables"
+}

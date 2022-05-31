@@ -47,29 +47,48 @@ federating_ldp --> federating_collections : "rel="search""
 federating_ldp .right.> federated_ldp : "rel="child""
 
 
-object "<<JSON>>\nMER_FRS_1P:Collection" as MER_FRS_1P {
-      path = "https://fedeo.ceos.org/collections/MER_FRS_1P"
+object "<<JSON>>\nPROBA_CHRIS_1A:Collection" as PROBA_CHRIS_1A {
+      path = "https://fedeo.ceos.org/collections/PROBA_CHRIS_1A"
 }
 
-object "<<JSON>>\nMER_FRS_1P:Collection" as MER_FRS_1P_federating {
-      path = "https://idn.ceos.org/collections/MER_FRS_1P"
+object "<<JSON>>\nPROBA_CHRIS_1A:Collection" as PROBA_CHRIS_1A_federating {
+      path = "https://idn.ceos.org/collections/PROBA_CHRIS_1A"
 }
 
 
 object "<<GeoJSON>>\n:Features" as federated_items {
-  path = "https://fedeo.ceos.org/collections/MER_FRS_1P/items"
+  path = "https://fedeo.ceos.org/collections/\n  PROBA_CHRIS_1A/items"
 }
 
-federated_collections o-down- MER_FRS_1P
+object "<<JSONSchema>>\n:Queryables" as queryables {
+  path = "https://fedeo.ceos.org/collections/\n  PROBA_CHRIS_1A/queryables"
+}
 
-federating_collections o-down- MER_FRS_1P_federating
+object "<<JSONSchema>>\n:Queryables" as federated_queryables {
+  path = "https://fedeo.ceos.org/queryables"
+}
+
+object "<<JSONSchema>>\n:Queryables" as federating_queryables {
+  path = "https://idn.ceos.org/queryables"
+}
+
+federating_ldp .up.> federating_queryables : "rel="queryables""
+federated_ldp .up.> federated_queryables : "rel="queryables""
+
+federated_collections o-down- PROBA_CHRIS_1A
+
+federating_collections o-down- PROBA_CHRIS_1A_federating
 
 
-MER_FRS_1P --> federated_items : "rel="items""
+PROBA_CHRIS_1A --> federated_items : "rel="items""
 
-MER_FRS_1P_federating --> federated_items : "rel="items""
+PROBA_CHRIS_1A ..> queryables : "rel="queryables""
 
-MER_FRS_1P_federating --> federated_search : "rel="search""
+PROBA_CHRIS_1A_federating ..> queryables : "rel="queryables""
+
+PROBA_CHRIS_1A_federating --> federated_items : "rel="items""
+
+PROBA_CHRIS_1A_federating --> federated_search : "rel="search""
 
 
 
